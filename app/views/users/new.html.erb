@@ -2,21 +2,21 @@
 
 <%= form_for @user do |f| %>
   <p>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+    <%#= f.label :username %>
+    <%= f.text_field :username, placeholder:"Username", class:"form-control" %>
   </p>
 
   <p>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%#= f.label :password %>
+    <%= f.password_field :password, placeholder:"Enter your password", class:"form-control" %>
   </p>
 
   <p>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <%#= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, placeholder:"Confirm your password", class:"form-control" %>
   </p>
 
   <p>
-    <%= f.submit %>
+    <%= f.submit 'SingUp', class:"btn btn-success" %>
   </p>
 <% end %>
