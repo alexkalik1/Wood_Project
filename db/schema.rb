@@ -10,9 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20171102170806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "estimates", force: :cascade do |t|
+    t.integer "total_price"
+    t.string "materials"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_estimates_on_project_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.float "length_in_inches"
+    t.float "width_in_inches"
+    t.float "thickness_in_inches"
+    t.integer "budget"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "estimates", "projects"
 end

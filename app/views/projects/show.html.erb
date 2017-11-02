@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Length in inches:</strong>
+  <%= @project.length_in_inches %>
+</p>
+
+<p>
+  <strong>Width in inches:</strong>
+  <%= @project.width_in_inches %>
+</p>
+
+<p>
+  <strong>Thickness in inches:</strong>
+  <%= @project.thickness_in_inches %>
+</p>
+
+<p>
+  <strong>Budget:</strong>
+  <%= @project.budget %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
