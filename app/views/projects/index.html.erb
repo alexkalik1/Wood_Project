@@ -5,9 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Length in inches</th>
-      <th>Width in inches</th>
-      <th>Thickness in inches</th>
+      <th>Length(in.)</th>
+      <th>Width(in.)</th>
+      <th>Thickness(in.)</th>
       <th>Budget</th>
       <th colspan="3"></th>
     </tr>
@@ -19,7 +19,7 @@
         <td><%= project.length_in_inches %></td>
         <td><%= project.width_in_inches %></td>
         <td><%= project.thickness_in_inches %></td>
-        <td><%= project.budget %></td>
+        <td><%= sprintf('$%.2f', project.budget) %></td>
         <td><%= link_to 'Show', project %></td>
         <td><%= link_to 'Edit', edit_project_path(project) %></td>
         <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
