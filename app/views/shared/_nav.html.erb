@@ -18,6 +18,15 @@
     <span class="navbar-text">
       
     </span>
-    <a class="btn btn-outline-success my-2 my-sm-0" href="<%= new_users_path %>">Sing Up</a>
+    
+    <% if current_user %>
+      <p class="font-weight-bold px-4 pt-3">Hello! <%= current_user.username %></p>
+      <button class="btn btn-sm btn-danger" type="button"><%= link_to "Logout", '/logout' %></button>
+
+      <% else %>
+      <a class="btn btn-primary my-2 my-sm-0" href="<%= new_users_path %>">Sing Up</a>
+      <!-- <button class="btn btn-sm align-middle btn-success mx-4" type="button"><%#= link_to 'Login', '/login' %></button> -->
+      <!-- <button class="btn btn-sm align-middle btn-primary" type="button"><%#= link_to 'Sign Up', '/signup' %></button> -->
+      <% end %>
   </div>
 </nav>
